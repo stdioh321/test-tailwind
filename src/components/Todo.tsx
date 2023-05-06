@@ -17,11 +17,11 @@ const Todo: React.FC<TodoProps> = ({ id, complete = false, content = '', onToggl
           <div className="complete col-span-1">
             <label className='cursor-pointer' >
               <input className='hidden' type="checkbox" checked={complete} onChange={() => onToggleComplete && onToggleComplete(id)} />
-              <FontAwesomeIcon className={`${complete ? 'text-blue-500' : ''}`} icon={complete ? faThumbsUp : faThumbsDown} />
+              <FontAwesomeIcon className={`transition-colors duration-500 ${complete ? 'text-blue-500' : ''}`} icon={complete ? faThumbsUp : faThumbsDown} />
             </label>
           </div>
           <div className="content col-span-11" title={id}>
-            <div className={`${complete ? 'line-through text-blue-500' : ''}`}>{content}</div>
+            <div className={`transition-colors duration-500 ${complete ? 'line-through text-blue-500' : ''}`}>{content}</div>
           </div>
         </div>
       </div>
